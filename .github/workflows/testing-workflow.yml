@@ -28,3 +28,8 @@ jobs:
           super_secret: ${{secrets.testing}}
         env:
           super_secret: ${{secrets.devmysecret}}
+        run: |
+          echo testing Repo secret $super_secret
+          echo testing Env secret $env.super_secret
+
+
