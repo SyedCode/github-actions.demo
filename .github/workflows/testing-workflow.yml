@@ -17,7 +17,7 @@ jobs:
 
       - name: Run a one-line script
         env:
-          SECRET1: ${{ secrets.DEVMYSECRET }}
+          SECRET1: ${{ secrets.env.DEVMYSECRET }}
           SECRET2: ${{ secrets.TESTING }}
           SECRET3: ${{ secrets.TESTING_NEW }}
         run: |
