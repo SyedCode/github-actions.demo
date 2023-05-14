@@ -27,6 +27,7 @@ jobs:
           echo SECRET1, world $SECRET1!
           echo SECRET2, world $SECRET2!
           echo SECRET3, world $SECRET3!
+          echo SECRET3, world $repo-token!
 
       - name: Run a multi-line script
         run: |
