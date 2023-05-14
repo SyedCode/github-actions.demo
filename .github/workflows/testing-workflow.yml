@@ -17,10 +17,14 @@ jobs:
 
       - name: Run a one-line script
         env:
-          secret2: ${{ secrets.devmysecret }}
+          SECRET1: ${{ secrets.DEVMYSECRET }}
+          SECRET2: ${{ secrets.TESTING }}
+          SECRET3: ${{ secrets.TESTING_NEW }}
         run: |
           echo Hello, world!
-          echo Hello, world $secret2!
+          echo SECRET1, world $SECRET1!
+          echo SECRET2, world $SECRET2!
+          echo SECRET3, world $SECRET3!
 
       - name: Run a multi-line script
         run: |
