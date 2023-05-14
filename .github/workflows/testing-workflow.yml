@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "testing_patch1" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "testing_patch1" ]
 
   workflow_dispatch:
 
@@ -16,20 +16,13 @@ jobs:
       - uses: actions/checkout@v3 #checkout repo
 
       - name: Run a one-line script
-        run: echo Hello, world!
+        env:
+          secret2: ${{ secrets.devmysecret }}
+        run: |
+          echo Hello, world!
+          echo Hello, world $secret2!
 
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-      - name: Hello World
-        with:
-          super_secret: ${{secrets.testing}}
-        env:
-          super_secret: ${{secrets.devmysecret}}
-        run: |
-          echo testing Repo secret $super_secret
-          echo testing Env122 secret $env.super_secret
-
-
