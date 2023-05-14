@@ -14,12 +14,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3 #checkout repo
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Run a one-line script
         env:
-          SECRET1: ${{ secrets.env.DEVMYSECRET }}
-          SECRET2: ${{ secrets.TESTING }}
-          SECRET3: ${{ secrets.TESTING_NEW }}
+          SECRET1: "${{ secrets.dev.DEVMYSECRET }}"
+          SECRET2: "${{ secrets.TESTING }}"
+          SECRET3: "${{ secrets.TESTING_NEW }}"
         run: |
           echo Hello, world!
           echo SECRET1, world $SECRET1!
